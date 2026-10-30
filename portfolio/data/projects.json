@@ -1,0 +1,56 @@
+[
+  {
+    "id": "sample-project-1",
+    "title": "Sample Project 1 (placeholder)",
+    "summary": "Placeholder summary. Replace with one sentence about a real project.",
+    "description": "This is placeholder text for Sample Project 1. Replace it with a few sentences about the problem, your role, the approach you took and what you learned. No real project is described here.",
+    "tags": ["Placeholder", "Web"],
+    "year": 2026,
+    "status": "Placeholder"
+  },
+  {
+    "id": "sample-project-2",
+    "title": "Sample Project 2 (placeholder)",
+    "summary": "Placeholder summary. Replace with one sentence about a real project.",
+    "description": "This is placeholder text for Sample Project 2. Replace it with a few sentences about the problem, your role, the approach you took and what you learned. No real project is described here.",
+    "tags": ["Placeholder", "Design"],
+    "year": 2026,
+    "status": "Placeholder"
+  },
+  {
+    "id": "sample-project-3",
+    "title": "Sample Project 3 (placeholder)",
+    "summary": "Placeholder summary. Replace with one sentence about a real project.",
+    "description": "This is placeholder text for Sample Project 3. Replace it with a few sentences about the problem, your role, the approach you took and what you learned. No real project is described here.",
+    "tags": ["Placeholder", "Security"],
+    "year": 2025,
+    "status": "Placeholder"
+  },
+  {
+    "id": "sample-project-4",
+    "title": "Sample Project 4 (placeholder)",
+    "summary": "Placeholder summary. Replace with one sentence about a real project.",
+    "description": "This is placeholder text for Sample Project 4. Replace it with a few sentences about the problem, your role, the approach you took and what you learned. No real project is described here.",
+    "tags": ["Placeholder", "Data"],
+    "year": 2025,
+    "status": "Placeholder"
+  },
+  {
+    "id": "sample-project-5",
+    "title": "Sample Project 5 (placeholder)",
+    "summary": "Placeholder summary. Replace with one sentence about a real project.",
+    "description": "This is placeholder text for Sample Project 5. Replace it with a few sentences about the problem, your role, the approach you took and what you learned. No real project is described here.",
+    "tags": ["Placeholder", "Automation"],
+    "year": 2024,
+    "status": "Placeholder"
+  },
+  {
+    "id": "sample-project-6",
+    "title": "Sample Project 6 (placeholder)",
+    "summary": "Placeholder summary. Replace with one sentence about a real project.",
+    "description": "This is placeholder text for Sample Project 6. Replace it with a few sentences about the problem, your role, the approach you took and what you learned. No real project is described here.",
+    "tags": ["Placeholder", "Mobile"],
+    "year": 2024,
+    "status": "Placeholder"
+  }
+]
