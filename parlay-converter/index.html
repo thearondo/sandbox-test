@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parlay Odds Converter</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>Parlay Odds Converter</h1>
+<p class="sub">Math only. Type each leg's book price; optionally your own estimate or the other side's price.</p></header>
+<main>
+<section aria-labelledby="h-legs">
+  <h2 id="h-legs">Legs</h2>
+  <div id="legs"></div>
+  <button type="button" id="add-row" class="btn">Add row</button>
+  <p id="max-note" class="line"></p>
+  <p id="used" class="line" role="status" aria-live="polite"></p>
+  <div class="slip">
+    <label>Stake ($) <input id="stake" type="text" inputmode="decimal" value="10"></label>
+    <label>Posted parlay price (American, optional) <input id="posted" type="text" inputmode="numeric" placeholder="e.g. +718"></label>
+    <label class="chk"><input id="sgp" type="checkbox"> Same-game parlay</label>
+  </div>
+</section>
+<section aria-labelledby="h-out">
+  <h2 id="h-out">Output</h2>
+  <div class="scroll" role="region" aria-label="Output table" tabindex="0">
+  <table id="out">
+    <caption class="sr-only">Converted prices per leg and for the parlay</caption>
+    <thead><tr><th scope="col">Leg</th><th scope="col">Input</th><th scope="col">Decimal</th><th scope="col">Implied %</th><th scope="col">American</th><th scope="col">True %</th><th scope="col">Fair price</th><th scope="col">Gap (pts)</th><th scope="col">Flag</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+  <p id="payout" class="line"></p>
+  <p id="posted-check" class="line"></p>
+  <div id="details"></div>
+  <ul class="notes">
+    <li>When the true chance is under 50%, the fair price is plus odds, even if the book shows a minus number.</li>
+    <li>A true or no-vig price needs both sides' prices or a paid data feed. Without them, only your own estimate is used.</li>
+    <li>RED means the book price implies a higher chance than your true %.</li>
+  </ul>
+</section>
+</main>
+<footer id="footer"><p>21+ only. Gambling problem? Call 1-800-GAMBLER. This tool does math only; it takes no bets and no sportsbook pays us.</p></footer>
+<script src="odds.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
