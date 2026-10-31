@@ -54,3 +54,13 @@ Cards cycle through six CSS gradient thumbnails (`.thumb--1` to `.thumb--6` in `
 - All paths are relative, so it works at the domain root or under a subpath such as `/portfolio/`.
 - No environment variables, no secrets, no server-side code.
 - With nginx, the default config is enough. `index.html` is picked up as the directory index, and `.json` is served as `application/json` by the standard `mime.types`.
+
+### Branch flow
+
+`main` auto-deploys the live site, so changes reach it in three steps:
+
+1. Work on a feature branch (for example `feature/portfolio`).
+2. Open a pull request into `staging` and merge it there to check the change.
+3. When staging looks right, open a pull request from `staging` into `main`.
+
+Never commit or push straight to `main`.
