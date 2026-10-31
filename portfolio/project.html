@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Project detail page: reads ?id= from the URL and renders that project from data/projects.json. -->
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project details | Your Name Portfolio</title>
+  <meta name="description" content="Details for a placeholder sample project.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="detail">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <span class="site-header__name">Your Name</span>
+        <span class="site-header__divider" aria-hidden="true">/</span>
+        <span class="site-header__section">Portfolio</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <p class="back-link-wrap">
+      <a class="back-link" href="index.html"><span aria-hidden="true">&larr;</span> Back to all projects</a>
+    </p>
+
+    <article id="project-detail" class="detail" aria-live="polite">
+      <p class="status-message js-only">Loading project&hellip;</p>
+    </article>
+
+    <noscript>
+      <div class="noscript">
+        <p>JavaScript is turned off, so this project can't load. Go back to the <a href="index.html">project list</a>, or read the raw data in <a href="data/projects.json">projects.json</a>.</p>
+      </div>
+    </noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Your Name. All projects shown are placeholders.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
