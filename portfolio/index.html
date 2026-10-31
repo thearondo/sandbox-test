@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Portfolio home page: intro and a grid of placeholder project cards loaded from data/projects.json. -->
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio of sample projects</title>
+  <meta name="description" content="Portfolio of placeholder sample projects.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <span class="site-header__name">Your Name</span>
+        <span class="site-header__divider" aria-hidden="true">/</span>
+        <span class="site-header__section">Portfolio</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="intro" aria-labelledby="intro-heading">
+      <h1 id="intro-heading" class="intro__title">Selected work</h1>
+      <p class="intro__text">
+        A short introduction goes here. Every project below is a placeholder,
+        ready to be replaced with real work.
+      </p>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-title">Projects</h2>
+      <ul id="project-grid" class="project-grid" aria-live="polite"></ul>
+      <p id="grid-status" class="status-message" hidden></p>
+
+      <noscript>
+        <div class="noscript">
+          <p>JavaScript is turned off, so the project cards can't load. You can still open each project here:</p>
+          <ul class="noscript__list">
+            <li><a href="project.html?id=sample-project-1">Sample Project 1 (placeholder)</a></li>
+            <li><a href="project.html?id=sample-project-2">Sample Project 2 (placeholder)</a></li>
+            <li><a href="project.html?id=sample-project-3">Sample Project 3 (placeholder)</a></li>
+            <li><a href="project.html?id=sample-project-4">Sample Project 4 (placeholder)</a></li>
+            <li><a href="project.html?id=sample-project-5">Sample Project 5 (placeholder)</a></li>
+            <li><a href="project.html?id=sample-project-6">Sample Project 6 (placeholder)</a></li>
+          </ul>
+          <p>The project details also need JavaScript, and the raw data is in <a href="data/projects.json">projects.json</a>.</p>
+        </div>
+      </noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Your Name. All projects shown are placeholders.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
