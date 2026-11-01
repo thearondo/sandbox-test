@@ -4,26 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parlay Odds Converter</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header><h1>Parlay Odds Converter</h1>
-<p class="sub">Math only. Type each leg's book price; optionally your own estimate or the other side's price.</p></header>
+<p class="sub">Math only. Pick a sport, add a game, then tap to build each leg.</p>
+<div role="tablist" aria-label="Views" class="tabs">
+  <button type="button" role="tab" id="tab-build" aria-controls="view-build" aria-selected="true" class="tab">Build parlay</button>
+  <button type="button" role="tab" id="tab-quick" aria-controls="view-quick" aria-selected="false" tabindex="-1" class="tab">Quick convert</button>
+</div></header>
 <main>
-<section aria-labelledby="h-legs">
-  <h2 id="h-legs">Legs</h2>
-  <div id="legs"></div>
-  <button type="button" id="add-row" class="btn">Add row</button>
-  <p id="max-note" class="line"></p>
-  <p id="used" class="line" role="status" aria-live="polite"></p>
-  <div class="slip">
-    <label>Stake ($) <input id="stake" type="text" inputmode="decimal" value="10"></label>
-    <label>Posted parlay price (American, optional) <input id="posted" type="text" inputmode="numeric" placeholder="e.g. +718"></label>
-    <label class="chk"><input id="sgp" type="checkbox"> Same-game parlay</label>
+<div id="view-build" role="tabpanel" aria-labelledby="tab-build">
+<section aria-labelledby="h-sport" class="card">
+  <h2 id="h-sport">1. Sport</h2>
+  <div class="chips" role="group" aria-labelledby="h-sport" id="sports">
+    <button type="button" class="chip sport" aria-pressed="false" data-sport="Football">Football</button>
+    <button type="button" class="chip sport" aria-pressed="false" data-sport="Basketball">Basketball</button>
+  </div>
+  <div id="game-form" hidden>
+    <h2 id="h-game">2. Game</h2>
+    <div class="pair">
+      <label>Team 1 <select id="team-a"></select></label>
+      <span class="vs" aria-hidden="true">vs</span>
+      <label>Team 2 <select id="team-b"></select></label>
+    </div>
+    <button type="button" id="add-game" class="btn primary">Add game</button>
   </div>
 </section>
-<section aria-labelledby="h-out">
-  <h2 id="h-out">Output</h2>
+<div id="games" role="group" aria-label="Games"></div>
+<p id="game-msg" class="note" hidden></p>
+<section id="slip" aria-labelledby="h-slip" class="card" tabindex="-1">
+  <h2 id="h-slip">Slip</h2>
+  <p id="empty" class="muted">No legs yet. Add a game, then build a leg inside it.</p>
+  <ol id="legs" class="legs"></ol>
+  <p id="max-note" class="line"></p>
+  <p id="used" class="line" role="status" aria-live="polite"></p>
+  <div class="slipf">
+    <label>Stake ($) <input id="stake" type="text" inputmode="decimal" value="10" autocomplete="off"></label>
+    <label>Posted parlay price (American, optional) <span class="signrow"><input id="posted" type="text" inputmode="decimal" placeholder="e.g. +718" autocomplete="off"></span></label>
+    <label class="chk"><input id="sgp" type="checkbox"> Same-game parlay</label>
+    <p id="sgp-note" class="muted"></p>
+  </div>
   <div class="scroll" role="region" aria-label="Output table" tabindex="0">
   <table id="out">
     <caption class="sr-only">Converted prices per leg and for the parlay</caption>
@@ -32,16 +54,47 @@
   </table>
   </div>
   <p id="payout" class="line"></p>
+  <p id="corr" class="note" hidden></p>
+  <p id="opp" class="note" hidden></p>
   <p id="posted-check" class="line"></p>
   <div id="details"></div>
-  <ul class="notes">
-    <li>When the true chance is under 50%, the fair price is plus odds, even if the book shows a minus number.</li>
-    <li>A true or no-vig price needs both sides' prices or a paid data feed. Without them, only your own estimate is used.</li>
-    <li>RED means the book price implies a higher chance than your true %.</li>
-  </ul>
 </section>
+</div>
+<div id="view-quick" role="tabpanel" aria-labelledby="tab-quick" hidden>
+<section aria-labelledby="h-quick" class="card">
+  <h2 id="h-quick">Quick convert</h2>
+  <div class="chips" role="group" aria-label="Price type">
+    <button type="button" class="chip qkind" aria-pressed="true" data-kind="am">American odds</button>
+    <button type="button" class="chip qkind" aria-pressed="false" data-kind="pct">Hit-rate %</button>
+  </div>
+  <label>Book price <span class="signrow"><input id="q-price" type="text" inputmode="decimal" placeholder="e.g. -140" autocomplete="off"></span></label>
+  <button type="button" class="btn toggle" id="q-cv" aria-expanded="false" aria-controls="q-cvp">Check value</button>
+  <div id="q-cvp" class="cvp" hidden>
+    <label>Your % (optional) <input id="q-true" type="text" inputmode="decimal" placeholder="e.g. 45" autocomplete="off"></label>
+    <label>Other side price, same book (optional) <span class="signrow"><input id="q-other" type="text" inputmode="decimal" placeholder="e.g. +120" autocomplete="off"></span></label>
+  </div>
+  <div class="scroll" role="region" aria-label="Quick convert table" tabindex="0">
+  <table id="qc-out">
+    <caption class="sr-only">Converted price</caption>
+    <thead><tr><th scope="col">Leg</th><th scope="col">Input</th><th scope="col">Decimal</th><th scope="col">Implied %</th><th scope="col">American</th><th scope="col">True %</th><th scope="col">Fair price</th><th scope="col">Gap (pts)</th><th scope="col">Flag</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+  <p id="q-payout" class="line"></p>
+  <div id="q-details"></div>
+</section>
+</div>
+<ul class="notes">
+  <li>When the true chance is under 50%, the fair price is plus odds, even if the book shows a minus number.</li>
+  <li>A true or no-vig price needs both sides' prices or a paid data feed. Without them, only your own estimate is used.</li>
+  <li>RED means the book price implies a higher chance than your true %.</li>
+  <li>Team lists are names only. No schedules or odds are loaded; you type every price.</li>
+</ul>
 </main>
 <footer id="footer"><p>21+ only. Gambling problem? Call 1-800-GAMBLER. This tool does math only; it takes no bets and no sportsbook pays us.</p></footer>
+<div id="bar" role="region" aria-label="Slip summary"><p id="bar-txt">Slip empty</p><a href="#slip" id="bar-go" class="btn">View slip</a></div>
+<p id="live" class="sr-only" role="status" aria-live="polite"></p>
+<script src="teams.js"></script>
 <script src="odds.js"></script>
 <script src="app.js"></script>
 </body>
