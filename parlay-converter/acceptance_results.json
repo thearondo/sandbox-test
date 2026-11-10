@@ -1,0 +1,290 @@
+[
+ {
+  "browser": "chromium",
+  "id": "O1 OCR fixture -> 3 legs",
+  "pass": true,
+  "evidence": "0.8s [['Jordan Avery', 'Points', '24.5', 'Over', '-115'], ['Marcus Hale', 'Rebounds', '8.5', 'Under', '+120'], ['Tyler Brooks', 'Assists', '6.5', 'Over', '+150']] posted=+850"
+ },
+ {
+  "browser": "chromium",
+  "id": "L1 leg edits (unicode minus normalized, name edit)",
+  "pass": true,
+  "evidence": "minus->-110"
+ },
+ {
+  "browser": "chromium",
+  "id": "C1 conversions -115",
+  "pass": true,
+  "evidence": "Leg 1: Jordan Avery Over 24.5 Points | American | -115 | Decimal | 1.870 | Implied | 53.5% | Fair (no-vig) | Add the other side\u2019s price |  | Find this market on"
+ },
+ {
+  "browser": "chromium",
+  "id": "N1 no fair without other side",
+  "pass": true,
+  "evidence": "fair hidden until other side"
+ },
+ {
+  "browser": "chromium",
+  "id": "P1 parlay total + payout",
+  "pass": true,
+  "evidence": "payout=$102.83"
+ },
+ {
+  "browser": "chromium",
+  "id": "N2 no-vig leg1 -115/-105",
+  "pass": true,
+  "evidence": "Leg 1: Jordan Avery Over 24.5 Points | American | -115 | Decimal | 1.870 | Implied | 53.5% | Fair (no-vig) | -104.4 \u00b7 51.1% |  | Both sides -115 / -105 add to 104.7%; the book\u2019s cut (hold) is 4.7%. | "
+ },
+ {
+  "browser": "chromium",
+  "id": "R1 RED flag when book < fair",
+  "pass": true,
+  "evidence": "RED: Book odds +928.3 vs fair +1084.1"
+ },
+ {
+  "browser": "chromium",
+  "id": "K1 book links 7/leg, allowed hosts, no pre-fill claim",
+  "pass": true,
+  "evidence": "21 links"
+ },
+ {
+  "browser": "chromium",
+  "id": "A1 axe 0 violations (results state)",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "chromium",
+  "id": "R2 no RED when book >= fair; one-leg note",
+  "pass": true,
+  "evidence": "Book odds +105.0 are at or above fair +100.0"
+ },
+ {
+  "browser": "chromium",
+  "id": "S1 Sample data badge on every sample panel",
+  "pass": true,
+  "evidence": "['Sample data', 'Sample data', 'Sample data', 'Sample data']"
+ },
+ {
+  "browser": "chromium",
+  "id": "S2 line slider updates chart + Over %",
+  "pass": true,
+  "evidence": "The Over hit 2/10 at a line of 30.5 (20%)."
+ },
+ {
+  "browser": "chromium",
+  "id": "S3 state picker, one Best price, fair row",
+  "pass": true,
+  "evidence": "MD!=NJ"
+ },
+ {
+  "browser": "chromium",
+  "id": "S4 sport/stat chips + tiles",
+  "pass": true,
+  "evidence": "Pass Yds\nRush Yds\nReceptions"
+ },
+ {
+  "browser": "chromium",
+  "id": "U1 link: parse URL only, then manual/screenshot message",
+  "pass": true,
+  "evidence": "FanDuel link with 2 ID values. This link holds IDs only, not players, lines, or prices, an"
+ },
+ {
+  "browser": "chromium",
+  "id": "A2 44px tap targets",
+  "pass": true,
+  "evidence": "small=[] linkmin=46"
+ },
+ {
+  "browser": "chromium",
+  "id": "A3 no storage",
+  "pass": true,
+  "evidence": "{'ls': 0, 'ss': 0, 'ck': '', 'idb': 0}"
+ },
+ {
+  "browser": "chromium",
+  "id": "A4 no third-party requests",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "chromium",
+  "id": "A5 \"bet\" only in footer (book proper names excluded)",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "chromium",
+  "id": "A6 footer exact",
+  "pass": true,
+  "evidence": "21+ only. Gambling problem? Call 1-800-GAMBLER. This tool does math only; it takes no bets and no sportsbook pays us."
+ },
+ {
+  "browser": "chromium",
+  "id": "A7 focused field clear of sticky bar",
+  "pass": true,
+  "evidence": "field bottom 340 bar top 779"
+ },
+ {
+  "browser": "chromium",
+  "id": "A8 axe 0 violations (sample/link state)",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "chromium",
+  "id": "A9 no page errors",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "chromium",
+  "id": "O0 OCR works under page CSP, no third-party requests",
+  "pass": true,
+  "evidence": "Found 3 legs. Check them below, then press Convert."
+ },
+ {
+  "browser": "firefox",
+  "id": "O1 OCR fixture -> 3 legs",
+  "pass": true,
+  "evidence": "0.9s [['Jordan Avery', 'Points', '24.5', 'Over', '-115'], ['Marcus Hale', 'Rebounds', '8.5', 'Under', '+120'], ['Tyler Brooks', 'Assists', '6.5', 'Over', '+150']] posted=+850"
+ },
+ {
+  "browser": "firefox",
+  "id": "L1 leg edits (unicode minus normalized, name edit)",
+  "pass": true,
+  "evidence": "minus->-110"
+ },
+ {
+  "browser": "firefox",
+  "id": "C1 conversions -115",
+  "pass": true,
+  "evidence": "Leg 1: Jordan Avery Over 24.5 Points | American | -115 | Decimal | 1.870 | Implied | 53.5% | Fair (no-vig) | Add the other side\u2019s price |  | Find this market on"
+ },
+ {
+  "browser": "firefox",
+  "id": "N1 no fair without other side",
+  "pass": true,
+  "evidence": "fair hidden until other side"
+ },
+ {
+  "browser": "firefox",
+  "id": "P1 parlay total + payout",
+  "pass": true,
+  "evidence": "payout=$102.83"
+ },
+ {
+  "browser": "firefox",
+  "id": "N2 no-vig leg1 -115/-105",
+  "pass": true,
+  "evidence": "Leg 1: Jordan Avery Over 24.5 Points | American | -115 | Decimal | 1.870 | Implied | 53.5% | Fair (no-vig) | -104.4 \u00b7 51.1% |  | Both sides -115 / -105 add to 104.7%; the book\u2019s cut (hold) is 4.7%. | "
+ },
+ {
+  "browser": "firefox",
+  "id": "R1 RED flag when book < fair",
+  "pass": true,
+  "evidence": "RED: Book odds +928.3 vs fair +1084.1"
+ },
+ {
+  "browser": "firefox",
+  "id": "K1 book links 7/leg, allowed hosts, no pre-fill claim",
+  "pass": true,
+  "evidence": "21 links"
+ },
+ {
+  "browser": "firefox",
+  "id": "A1 axe 0 violations (results state)",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "firefox",
+  "id": "R2 no RED when book >= fair; one-leg note",
+  "pass": true,
+  "evidence": "Book odds +105.0 are at or above fair +100.0"
+ },
+ {
+  "browser": "firefox",
+  "id": "S1 Sample data badge on every sample panel",
+  "pass": true,
+  "evidence": "['Sample data', 'Sample data', 'Sample data', 'Sample data']"
+ },
+ {
+  "browser": "firefox",
+  "id": "S2 line slider updates chart + Over %",
+  "pass": true,
+  "evidence": "The Over hit 2/10 at a line of 30.5 (20%)."
+ },
+ {
+  "browser": "firefox",
+  "id": "S3 state picker, one Best price, fair row",
+  "pass": true,
+  "evidence": "MD!=NJ"
+ },
+ {
+  "browser": "firefox",
+  "id": "S4 sport/stat chips + tiles",
+  "pass": true,
+  "evidence": "Pass Yds\nRush Yds\nReceptions"
+ },
+ {
+  "browser": "firefox",
+  "id": "U1 link: parse URL only, then manual/screenshot message",
+  "pass": true,
+  "evidence": "FanDuel link with 2 ID values. This link holds IDs only, not players, lines, or prices, an"
+ },
+ {
+  "browser": "firefox",
+  "id": "A2 44px tap targets",
+  "pass": true,
+  "evidence": "small=[] linkmin=45.999969482421875"
+ },
+ {
+  "browser": "firefox",
+  "id": "A3 no storage",
+  "pass": true,
+  "evidence": "{'ls': 0, 'ss': 0, 'ck': '', 'idb': 0}"
+ },
+ {
+  "browser": "firefox",
+  "id": "A4 no third-party requests",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "firefox",
+  "id": "A5 \"bet\" only in footer (book proper names excluded)",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "firefox",
+  "id": "A6 footer exact",
+  "pass": true,
+  "evidence": "21+ only. Gambling problem? Call 1-800-GAMBLER. This tool does math only; it takes no bets and no sportsbook pays us."
+ },
+ {
+  "browser": "firefox",
+  "id": "A7 focused field clear of sticky bar",
+  "pass": true,
+  "evidence": "field bottom 340 bar top 779"
+ },
+ {
+  "browser": "firefox",
+  "id": "A8 axe 0 violations (sample/link state)",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "firefox",
+  "id": "A9 no page errors",
+  "pass": true,
+  "evidence": "[]"
+ },
+ {
+  "browser": "firefox",
+  "id": "O0 OCR works under page CSP, no third-party requests",
+  "pass": true,
+  "evidence": "Found 3 legs. Check them below, then press Convert."
+ }
+]
